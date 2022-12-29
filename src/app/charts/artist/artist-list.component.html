@@ -1,0 +1,24 @@
+<div>
+  <h2>{{ country }}'s Top Artists</h2>
+
+  <div *ngIf="!_artist">
+    <p>Loading data...</p>
+  </div>
+
+  <table *ngIf="_artist">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Artist</th>
+        <th>Total Listeners</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of createRange(50); let i=index">
+        <td id="position">{{ i+1 }}</td>
+        <td><a href="{{ _artist.topartists.artist[i].url }}">{{ _artist.topartists.artist[i].name }}</a></td>
+        <td id="listeners">{{ _artist.topartists.artist[i].listeners | number }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

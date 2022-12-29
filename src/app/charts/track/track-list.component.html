@@ -1,0 +1,26 @@
+<div>
+  <h2>{{ country }}'s Top Tracks</h2>
+
+  <div *ngIf="!_track">
+    <p>Loading data...</p>
+  </div>
+
+  <table *ngIf="_track">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Track</th>
+        <th>Artist</th>
+        <th>Total Listeners</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of createRange(50); let i=index">
+        <td id="position">{{ i+1 }}</td>
+        <td><a href="{{ _track.tracks.track[i].url }}">{{ _track.tracks.track[i].name }}</a></td>
+        <td><a href="{{ _track.tracks.track[i].artist.url }}">{{ _track.tracks.track[i].artist.name }}</a></td>
+        <td id="listeners">{{ _track.tracks.track[i].listeners | number }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

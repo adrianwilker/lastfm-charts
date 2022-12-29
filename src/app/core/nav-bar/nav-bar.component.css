@@ -1,0 +1,109 @@
+@import '../../../styles.css';
+
+header {
+  background-color: var(--bg2);
+  height: 65px;
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  height: 100%;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav > ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+nav > ul > li {
+  display: inline-block;
+  position: relative;
+  padding-left: 10px;
+}
+
+nav > ul > li > a, .mobile {
+  padding: 10px 5px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  outline: var(--bg) solid 1px;
+  border-radius: 5px;
+}
+
+.desktop {
+  display:block;
+}
+
+.mobile {
+  display: none;
+}
+
+nav > ul > li > a:hover {
+  color: var(--highlight);
+  outline: var(--highlight) solid 1px;
+  transition: color 300ms linear;
+  transition: outline 300ms linear;
+}
+
+nav > ul > li:hover .submenu {
+  /*display: block;*/
+  display: grid;
+  grid-template-columns: 125px 125px 125px;
+}
+
+ul.submenu {
+  position: absolute;
+  top: 40px;
+  left: -120px;
+  background-color: var(--bg2);
+  list-style-type: none;
+  padding: 0;
+  width: auto;
+  max-width: 400px;
+  z-index: 2;
+  display: none;
+  box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+ul.submenu li {
+  padding: 5px 0;
+}
+
+ul.submenu li:hover {
+  background-color: var(--highlight);
+}
+
+ul.submenu a {
+  padding: 5px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+}
+
+header > a {
+  position: absolute;
+  top: 30%;
+  right: 2%;
+}
+
+@media (max-width: 700px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display:block;
+  }
+
+  .mobile .submenu {
+    top: 100px;
+  }
+}

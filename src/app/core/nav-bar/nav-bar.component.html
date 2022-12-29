@@ -1,0 +1,29 @@
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a class="desktop" href="#">Top Artists<span>&dtrif;</span></a>
+        <span class="mobile"><img src="../../assets/images/microphone.svg" alt="Top Artists"/><span>&dtrif;</span></span>
+        <ul class="submenu">
+          <li *ngFor="let item of createRange(_countries.length); let i=index">
+            <a href="/artists/{{ _countries[i] }}"> {{ _countries[i] }}</a>
+            <!--<a [routerLink]="['/artists/', _countries[i]]">{{ _countries[i] }}</a>-->
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a class="desktop" href="#">Top Tracks<span>&dtrif;</span></a>
+        <span class="mobile"><img src="../../assets/images/music.svg" alt="Top Tracks"/><span>&dtrif;</span></span>
+        <ul class="submenu">
+          <li *ngFor="let item of createRange(_countries.length); let i=index">
+            <a href="/tracks/{{ _countries[i] }}">{{ _countries[i] }}</a>
+            <!--<a [routerLink]="['/tracks/', _countries[i]]">{{ _countries[i] }}</a>-->
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <a href="https://github.com/adrianwilker"><img src="../../assets/images/github.svg" alt="Github"/></a>
+</header>
