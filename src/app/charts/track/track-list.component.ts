@@ -11,9 +11,9 @@ export class TrackListComponent implements OnInit, OnDestroy {
 
   constructor(private activatedRoute: ActivatedRoute, private trackService: TrackService) { }
 
-  _track: Track;
+  _track!: Track;
   routeSub: any;
-  country: string;
+  country!: string;
 
   ngOnInit(): void {
     this.country = this.activatedRoute.snapshot.paramMap.get('country')!;

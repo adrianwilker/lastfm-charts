@@ -11,9 +11,9 @@ export class ArtistListComponent implements OnInit, OnDestroy {
 
   constructor(private activatedRoute: ActivatedRoute, private artistService: ArtistService) {}
 
-  _artist: Artist;
+  _artist!: Artist;
   routeSub: any;
-  country: string;
+  country!: string;
 
   ngOnInit(): void {
     this.country = this.activatedRoute.snapshot.paramMap.get('country')!;
